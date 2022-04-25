@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const db = require("./db/connections");
 const consoleTable = require("console.table");
 
-const table = [];
+const info = [];
 const jobInfo = (sql) => {
   db.query(sql, (err, data) => {
     if (err) {
@@ -26,7 +26,7 @@ db.connect(err => {
 const department = () =>{
     db.query('SELECT*FROM department', (err,data) =>{
       for (let i=0; i< data.length; i++){
-        table = data[i].title;
+       info= data[i].title;
       }
   
     });
@@ -50,10 +50,9 @@ const department = () =>{
     })
     .then((select) => {
       let sql = "";
-
       if (select.index === "select department") {
         sql = "SELECT*FROM department";
-        jobTable(sql);
+        jobInfo(sql);
       }
     });
 

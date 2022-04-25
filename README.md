@@ -4,10 +4,10 @@ This tracker will help organize employees, depatrments and roles into the dateba
 
 
 ## Install
--npm install
--npm install inquirer
+-npm i
 -npm install --save myql2
 -npm install console.table
+-npm install mysql
 
 
 ## Built With
